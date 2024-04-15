@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\GithubAccessController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use Laravel\Socialite\Facades\Socialite;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +24,9 @@ Route::get('/', function () {
         'canRegister' => Route::has('register'),
     ]);
 });
+
+Route::get('/auth/redirect', [GithubAccessController::class, 'getAccess'])->name('githubLogin');
+Route::get('/auth/callback', [GithubAccessController::class, 'redirectCallback'])->name('githubRedirect');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

@@ -6,6 +6,7 @@ import InputLabel from '@/Components/InputLabel';
 import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
 import { Head, Link, useForm } from '@inertiajs/react';
+import { FaGithub } from "react-icons/fa";
 
 export default function Login({ status, canResetPassword }) {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -92,6 +93,17 @@ export default function Login({ status, canResetPassword }) {
                     </PrimaryButton>
                 </div>
             </form>
+            <div className='mt-6 border-t-2 border-t-gray-200'>
+                <div className='my-4 text-sm font-semibold text-slate-700'>Login with social network</div>
+                {/* <Link href={ route('githubLogin') }><PrimaryButton className="mt-2 w-full text-center justify-center bg-slate-200 hover:bg-slate-300 font-bold text-lg text-slate-950" disabled={processing}>
+                    <FaGithub className='text-lg mr-4'></FaGithub> Login with GitHub
+                </PrimaryButton>
+                </Link> */}
+                <Link href={route('githubLogin')}>
+                <div className='w-full bg-slate-200 text-slate-950 inline-flex justify-center p-1.5 rounded-sm hover:bg-slate-300'>
+                <FaGithub className='text-xl m-1'></FaGithub> <span className='text-md text-slate-800 mt-0.5'>Login with GitHub</span></div>
+                </Link>
+            </div>
         </GuestLayout>
     );
 }
