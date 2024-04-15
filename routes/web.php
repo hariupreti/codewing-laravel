@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\GithubAccessController;
+use App\Http\Controllers\Auth\GithubAccessController as AuthGithubAccessController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -25,8 +25,8 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/auth/redirect', [GithubAccessController::class, 'getAccess'])->name('githubLogin');
-Route::get('/auth/callback', [GithubAccessController::class, 'redirectCallback'])->name('githubRedirect');
+Route::get('/auth/redirect', [AuthGithubAccessController::class, 'getAccess'])->name('githubLogin');
+Route::get('/auth/callback', [AuthGithubAccessController::class, 'redirectCallback'])->name('githubRedirect');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

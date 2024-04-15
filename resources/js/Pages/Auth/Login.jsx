@@ -94,7 +94,7 @@ export default function Login({ status, canResetPassword }) {
                 </div>
             </form>
             <div className='mt-6 border-t-2 border-t-gray-200'>
-                <div className='my-4 text-sm font-semibold text-slate-700'>Login with social network</div>
+                <div className='my-4 text-sm font-semibold text-slate-700'>Login with other network</div>
                 {/* <Link href={ route('githubLogin') }><PrimaryButton className="mt-2 w-full text-center justify-center bg-slate-200 hover:bg-slate-300 font-bold text-lg text-slate-950" disabled={processing}>
                     <FaGithub className='text-lg mr-4'></FaGithub> Login with GitHub
                 </PrimaryButton>
